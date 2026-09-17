@@ -1,0 +1,1300 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Journey of Money</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#080d13;
+    color:#f5f5f5;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(5,9,14,.95);
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid #25303d;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#e0ad45;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:#a9b0ba;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#e0ad45;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:92vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(224,173,69,.13),
+        transparent 40%),
+        linear-gradient(135deg,#080d13,#111b27);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.eyebrow{
+    color:#e0ad45;
+    letter-spacing:5px;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(48px,8vw,90px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#e0ad45;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#9ca6b4;
+    font-size:19px;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:14px 30px;
+
+    background:#e0ad45;
+    color:#080d13;
+
+    font-weight:bold;
+    border-radius:6px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(224,173,69,.2);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:90px 8%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:#e0ad45;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin:8px 0;
+}
+
+.section-title p{
+    color:#8993a2;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    background:#0d141d;
+}
+
+.intro-box{
+    max-width:900px;
+    margin:auto;
+
+    background:#111a25;
+
+    border:1px solid #26313e;
+    border-radius:15px;
+
+    padding:35px;
+
+    text-align:center;
+}
+
+.intro-box p{
+    color:#aab2be;
+    font-size:17px;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.journey{
+    background:#080d13;
+}
+
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    background:#e0ad45;
+}
+
+.stage{
+    width:50%;
+    padding:25px 45px;
+
+    position:relative;
+}
+
+.stage:nth-child(odd){
+    left:0;
+    text-align:right;
+}
+
+.stage:nth-child(even){
+    left:50%;
+}
+
+.stage::after{
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:#e0ad45;
+
+    border-radius:50%;
+
+    top:35px;
+}
+
+.stage:nth-child(odd)::after{
+    right:-9px;
+}
+
+.stage:nth-child(even)::after{
+    left:-9px;
+}
+
+.stage-card{
+    background:#111a25;
+
+    border:1px solid #26313e;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.stage-card:hover{
+    transform:translateY(-7px);
+    border-color:#e0ad45;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.stage-number{
+    color:#e0ad45;
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.stage-card h3{
+    font-size:25px;
+    margin:7px 0;
+}
+
+.stage-card p{
+    color:#8e98a7;
+}
+
+
+/* =========================
+   MONEY TYPES
+========================= */
+
+.money-types{
+    background:#0d141d;
+}
+
+.money-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.money-card{
+    background:#111a25;
+
+    border:1px solid #26313e;
+
+    border-radius:14px;
+
+    padding:30px;
+
+    transition:.3s;
+}
+
+.money-card:hover{
+    transform:translateY(-8px);
+    border-color:#e0ad45;
+}
+
+.money-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.money-card h3{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.money-card p{
+    color:#8993a2;
+}
+
+.tag{
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    background:#292313;
+
+    color:#e0ad45;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   INDIA SECTION
+========================= */
+
+.india{
+    background:#080d13;
+}
+
+.india-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.india-card{
+    padding:35px;
+
+    background:#111a25;
+
+    border:1px solid #26313e;
+
+    border-radius:14px;
+}
+
+.india-card h3{
+    color:#e0ad45;
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+.india-card p{
+    color:#929cab;
+}
+
+
+/* =========================
+   DIGITAL MONEY
+========================= */
+
+.digital{
+    background:
+        radial-gradient(circle at center,
+        rgba(224,173,69,.08),
+        transparent 45%),
+        #0d141d;
+}
+
+.digital-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.digital-card{
+    text-align:center;
+
+    padding:30px 20px;
+
+    background:#111a25;
+
+    border:1px solid #26313e;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.digital-card:hover{
+    transform:scale(1.04);
+    border-color:#e0ad45;
+}
+
+.digital-card .icon{
+    font-size:45px;
+    margin-bottom:12px;
+}
+
+.digital-card h3{
+    margin-bottom:8px;
+}
+
+.digital-card p{
+    color:#858f9e;
+    font-size:14px;
+}
+
+
+/* =========================
+   COMPARISON
+========================= */
+
+.compare{
+    background:#080d13;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+
+    background:#111a25;
+
+    border:1px solid #26313e;
+}
+
+th,td{
+    padding:18px;
+    border:1px solid #26313e;
+    text-align:left;
+}
+
+th{
+    background:#1b2531;
+    color:#e0ad45;
+}
+
+td{
+    color:#a5adba;
+}
+
+
+/* =========================
+   FUTURE
+========================= */
+
+.future{
+    background:#0d141d;
+    text-align:center;
+}
+
+.future-box{
+    max-width:900px;
+    margin:auto;
+
+    padding:50px 30px;
+
+    background:#111a25;
+
+    border:1px solid #26313e;
+
+    border-radius:15px;
+}
+
+.future-box h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.future-box h2 span{
+    color:#e0ad45;
+}
+
+.future-box p{
+    color:#929cab;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#05080c;
+
+    border-top:1px solid #202a35;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#697382;
+}
+
+footer strong{
+    color:#e0ad45;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    .money-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .digital-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .timeline::before{
+        left:10px;
+    }
+
+    .stage,
+    .stage:nth-child(even){
+        width:100%;
+        left:0;
+        text-align:left;
+        padding-left:40px;
+    }
+
+    .stage::after,
+    .stage:nth-child(odd)::after,
+    .stage:nth-child(even)::after{
+        left:1px;
+        right:auto;
+    }
+
+    .money-grid,
+    .india-grid,
+    .digital-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        MONEY<span>FLOW</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#types">Types</a></li>
+        <li><a href="#india">India</a></li>
+        <li><a href="#future">Future</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+    <div class="eyebrow">
+        COMMERCE • ECONOMICS • TECHNOLOGY
+    </div>
+
+    <h1>
+        THE JOURNEY OF <span>MONEY</span>
+    </h1>
+
+    <p>
+        From simple barter to instant digital payments,
+        discover how money has transformed the way humans
+        trade, save and build economies.
+    </p>
+
+    <a href="#journey" class="btn">
+        BEGIN THE JOURNEY
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>THE BIG IDEA</small>
+
+    <h2>Why Does Money Exist?</h2>
+
+</div>
+
+<div class="intro-box">
+
+<p>
+Before money existed, people exchanged goods directly.
+This system was called barter. As societies grew,
+bartering became difficult, leading humans to develop
+different forms of money that were easier to store,
+carry, measure and exchange.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     JOURNEY TIMELINE
+========================= -->
+
+<section class="journey" id="journey">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>THE EVOLUTION</small>
+
+    <h2>Journey Through Time</h2>
+
+    <p>How humans moved from objects to digital numbers.</p>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="stage">
+
+<div class="stage-card">
+
+    <div class="stage-number">STAGE 01</div>
+
+    <h3>Barter System</h3>
+
+    <p>
+        People exchanged goods and services directly.
+        For example, a farmer could exchange wheat
+        for clothes.
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-card">
+
+    <div class="stage-number">STAGE 02</div>
+
+    <h3>Commodity Money</h3>
+
+    <p>
+        Useful objects such as salt, cattle, grains
+        and shells were used as a medium of exchange.
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-card">
+
+    <div class="stage-number">STAGE 03</div>
+
+    <h3>Metal Coins</h3>
+
+    <p>
+        Metals such as gold, silver and copper became
+        popular because they were durable and portable.
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-card">
+
+    <div class="stage-number">STAGE 04</div>
+
+    <h3>Paper Money</h3>
+
+    <p>
+        Paper currency made large transactions easier
+        and reduced the need to carry heavy metals.
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-card">
+
+    <div class="stage-number">STAGE 05</div>
+
+    <h3>Banking & Cheques</h3>
+
+    <p>
+        Banks introduced systems that allowed people
+        to store money and make payments without
+        physically carrying cash.
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-card">
+
+    <div class="stage-number">STAGE 06</div>
+
+    <h3>Cards & ATMs</h3>
+
+    <p>
+        Debit and credit cards made electronic payments
+        and cash withdrawals faster and more convenient.
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-card">
+
+    <div class="stage-number">STAGE 07</div>
+
+    <h3>Digital Payments</h3>
+
+    <p>
+        Smartphones and online banking allow people
+        to transfer money instantly without physical cash.
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-card">
+
+    <div class="stage-number">STAGE 08</div>
+
+    <h3>The Future</h3>
+
+    <p>
+        The future of money may include advanced
+        digital currencies, programmable payments
+        and new financial technologies.
+    </p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TYPES OF MONEY
+========================= -->
+
+<section class="money-types" id="types">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>FORMS OF MONEY</small>
+
+    <h2>Different Types of Money</h2>
+
+    <p>Money has existed in many forms throughout history.</p>
+
+</div>
+
+
+<div class="money-grid">
+
+
+<div class="money-card">
+
+<div class="money-icon">🐚</div>
+
+<h3>Commodity Money</h3>
+
+<p>
+Objects that had value themselves were used
+for exchanging goods.
+</p>
+
+<span class="tag">ANCIENT</span>
+
+</div>
+
+
+<div class="money-card">
+
+<div class="money-icon">🪙</div>
+
+<h3>Coins</h3>
+
+<p>
+Metal coins provided a standardized and durable
+method of payment.
+</p>
+
+<span class="tag">METAL</span>
+
+</div>
+
+
+<div class="money-card">
+
+<div class="money-icon">💵</div>
+
+<h3>Paper Currency</h3>
+
+<p>
+Government-issued notes became widely used
+for everyday transactions.
+</p>
+
+<span class="tag">CASH</span>
+
+</div>
+
+
+<div class="money-card">
+
+<div class="money-icon">💳</div>
+
+<h3>Bank Cards</h3>
+
+<p>
+Debit and credit cards allow electronic payments
+through banking networks.
+</p>
+
+<span class="tag">ELECTRONIC</span>
+
+</div>
+
+
+<div class="money-card">
+
+<div class="money-icon">📱</div>
+
+<h3>Mobile Payments</h3>
+
+<p>
+Smartphones allow people to make quick digital
+payments and transfers.
+</p>
+
+<span class="tag">DIGITAL</span>
+
+</div>
+
+
+<div class="money-card">
+
+<div class="money-icon">🌐</div>
+
+<h3>Digital Currency</h3>
+
+<p>
+Modern financial technology has created new
+forms of digitally represented value.
+</p>
+
+<span class="tag">FUTURE</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INDIA
+========================= -->
+
+<section class="india" id="india">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>INDIA</small>
+
+    <h2>Money in India</h2>
+
+    <p>From ancient coins to modern digital payments.</p>
+
+</div>
+
+
+<div class="india-grid">
+
+
+<div class="india-card">
+
+<h3>🇮🇳 Indian Rupee</h3>
+
+<p>
+The Indian Rupee is the official currency of India.
+Its symbol is ₹. The currency is issued and managed
+within India's monetary and banking system.
+</p>
+
+</div>
+
+
+<div class="india-card">
+
+<h3>🏦 Banking</h3>
+
+<p>
+Banks provide services such as deposits, loans,
+money transfers and electronic payments.
+They play an important role in the modern economy.
+</p>
+
+</div>
+
+
+<div class="india-card">
+
+<h3>📱 Digital Payments</h3>
+
+<p>
+Digital payment systems have made it possible to
+transfer money quickly using smartphones and
+banking applications.
+</p>
+
+</div>
+
+
+<div class="india-card">
+
+<h3>💼 Importance in Commerce</h3>
+
+<p>
+Money acts as a medium of exchange, a measure of
+value and a store of value, making modern business
+and trade much easier.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DIGITAL FUTURE
+========================= -->
+
+<section class="digital">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>MODERN MONEY</small>
+
+    <h2>How We Pay Today</h2>
+
+    <p>Money is becoming increasingly digital.</p>
+
+</div>
+
+
+<div class="digital-grid">
+
+
+<div class="digital-card">
+
+<div class="icon">🏦</div>
+
+<h3>Online Banking</h3>
+
+<p>
+Transfer and manage money through banking websites
+and applications.
+</p>
+
+</div>
+
+
+<div class="digital-card">
+
+<div class="icon">📲</div>
+
+<h3>UPI</h3>
+
+<p>
+Instant digital payments using supported
+banking applications.
+</p>
+
+</div>
+
+
+<div class="digital-card">
+
+<div class="icon">💳</div>
+
+<h3>Cards</h3>
+
+<p>
+Pay electronically using debit and credit cards.
+</p>
+
+</div>
+
+
+<div class="digital-card">
+
+<div class="icon">⌚</div>
+
+<h3>Contactless</h3>
+
+<p>
+Modern devices can make payments without
+physical cash.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMPARISON
+========================= -->
+
+<section class="compare">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>THEN VS NOW</small>
+
+    <h2>Evolution of Payment</h2>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+    <th>Feature</th>
+    <th>Traditional Money</th>
+    <th>Modern Digital Money</th>
+</tr>
+
+<tr>
+    <td>Physical Form</td>
+    <td>Coins & Notes</td>
+    <td>Mostly Digital Records</td>
+</tr>
+
+<tr>
+    <td>Speed</td>
+    <td>Usually Slower</td>
+    <td>Very Fast</td>
+</tr>
+
+<tr>
+    <td>Portability</td>
+    <td>Requires Physical Cash</td>
+    <td>Smartphone / Card</td>
+</tr>
+
+<tr>
+    <td>Record Keeping</td>
+    <td>Physical Receipts</td>
+    <td>Digital Records</td>
+</tr>
+
+<tr>
+    <td>Accessibility</td>
+    <td>Depends on Cash Availability</td>
+    <td>Depends on Digital Infrastructure</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FUTURE
+========================= -->
+
+<section class="future" id="future">
+
+<div class="container">
+
+<div class="future-box">
+
+    <div class="section-title">
+
+        <small>LOOKING AHEAD</small>
+
+        <h2>
+            What Will Money Look Like in the
+            <span>Future?</span>
+        </h2>
+
+    </div>
+
+    <p>
+        Money continues to evolve with technology.
+        Future financial systems may become faster,
+        more connected and increasingly digital.
+        However, the basic purpose of money remains
+        the same: making the exchange of value easier.
+    </p>
+
+    <br>
+
+    <a href="#home" class="btn">
+        BACK TO TOP
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+<strong>MONEYFLOW</strong>
+</p>
+
+<p>
+The Journey of Money • Educational School Project
+</p>
+
+<p>
+Created using HTML & CSS
+</p>
+
+</footer>
+
+
+</body>
+</html>
+```
